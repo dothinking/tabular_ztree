@@ -1,0 +1,60 @@
+.table_ztree {
+    padding: 0;
+}
+
+.table_ztree li a {
+    width: 100%;
+    vertical-align: middle;
+    height: 30px;
+}
+
+.table_ztree li > a,
+.table_ztree li a.curSelectedNode {
+    padding-top: 0px;
+    height: auto;
+    cursor: default;
+    opacity: 1;        
+    border: none;
+    border-top: 1px dotted #ccc;
+}
+
+.table_ztree li.tree_head a{
+    background: #2F4056;
+}
+
+.table_ztree li.tree_head a,
+.table_ztree li.tree_head + li > a{
+    border-top: none;
+}
+
+.table_ztree li.tree_head div.diy {        
+    color: #fff;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    text-align: center;
+}
+
+.table_ztree li ul {
+    padding-left: 0px
+}
+
+.table_ztree div.diy span {
+    line-height: 30px;
+    vertical-align: middle !important;
+}
+
+.table_ztree div.diy {
+    height: 100%;
+    line-height: 30px;        
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+    color: #6c6c6c;
+    font-family: "SimSun";
+    font-size: 12px;
+    overflow: hidden;
+} 
+
+.table_ztree div.diy:first-child {
+    text-align: left;
+}

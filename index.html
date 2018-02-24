@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo for tabular zTree</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9;IE=8;"/>
+    <link href="https://cdn.bootcss.com/zTree.v3/3.5.29/css/zTreeStyle/zTreeStyle.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/zTree.v3/3.5.29/js/jquery.ztree.all.min.js"></script>
+    <link href="./tabular_ztree.css" rel="stylesheet">
+    <script src="./tabular_ztree.js"></script>
+</head>
+
+<style type="text/css">
+    .layer{
+        width: 600px;
+        margin: 50px auto;
+        border: 1px solid #ccc;
+    }
+</style>
+
+<body>
+    <div class="layer">
+        <div id="tree_div1"><ul id="tree1" class="ztree"></ul></div>    
+    </div>
+
+    <div class="layer">
+        <div id="tree_div2"><ul id="tree2" class="ztree"></ul></div>    
+    </div>
+
+    <div class="layer">
+        <div id="tree_div3"><ul id="tree3" class="ztree"></ul></div>    
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        // 表格参数
+        var cols = {
+            "title": {"key":"", "name":"权限节点", "width":0.52},
+            "contents":[{
+                "key":"view", "name":"数据", "width":0.16},{
+                "key":"document", "name":"文档", "width":0.16},{
+                "key":"model", "name":"模型", "width":0.16
+            }]
+        };
+
+        // ztree配置
+        var setting1 = {
+            view: {
+                showIcon: false,
+                showLine: false
+            },
+            data: {
+                simpleData: {enable: true}
+            }
+        };
+
+        var setting2 = {
+            view: {
+                showIcon: false,
+                showLine: false
+            },
+            check: {
+                enable: true,
+                chkStyle: "radio"
+            },
+            data: {
+                simpleData: {enable: true}
+            }
+        };
+
+        var setting3 = {
+            view: {
+                showIcon: true,
+                showLine: false
+            },
+            check: {
+                enable: true,
+                chkStyle: "checkbox"
+            },
+            data: {
+                simpleData: {enable: true}
+            }
+        };
+
+        var nodes = [
+            {"id":"11609","pId":"11607","name":"\u53d1\u52a8\u673a\u975e\u6807\u6d4b\u91cf","action":"view","model":100},
+            {"id":"11607","pId":"8","name":"\u975e\u6807\u6d4b\u91cf","action":"view","view":451},
+            {"id":"3537","pId":"2780","name":" \u8f66\u8eab\u7cfb\u7edf\u6027\u80fd\u53c2\u6570\u8868","action":"view","model":201},
+            {"id":"3530","pId":"2780","name":" DTS\u53c2\u6570\u8868 \t\t\t\t\t","action":"view","view":61},
+            {"id":"2780","pId":"8","name":"\u6574\u8f66\u5ba2\u89c2\u6027\u80fd\u53c2\u6570","action":"view","document":154},
+            {"id":"8","pId":"0","name":"\u6027\u80fd\u53c2\u6570","action":"view","document":1},
+            {"id":"24","pId":"0","name":"\u8f66\u8f86\u62c6\u89e3","action":"view","view":12}
+        ];
+
+        // 初始化ztree        
+        var treeObj1 = init_tabular_ztree($("#tree1"), setting1, nodes, cols);
+        var treeObj2 = init_tabular_ztree($("#tree2"), setting2, nodes, cols);
+        var treeObj3 = init_tabular_ztree($("#tree3"), setting3, nodes, cols);
+
+        // 展开全部节点
+        treeObj1.expandAll(true);
+        treeObj2.expandAll(true);
+        treeObj3.expandAll(true);
+    })
+</script>
