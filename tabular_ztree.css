@@ -1,15 +1,16 @@
-.table_ztree {
+.tabular_ztree {
     padding: 0;
 }
 
-.table_ztree li a {
+.tabular_ztree li a {
     width: 100%;
     vertical-align: middle;
     height: 30px;
 }
 
-.table_ztree li > a,
-.table_ztree li a.curSelectedNode {
+/*行样式*/
+.tabular_ztree li > a,
+.tabular_ztree li a.curSelectedNode {
     padding-top: 0px;
     height: auto;
     cursor: default;
@@ -18,32 +19,34 @@
     border-top: 1px dotted #ccc;
 }
 
-.table_ztree li.tree_head a{
-    background: #2F4056;
-}
-
-.table_ztree li.tree_head a,
-.table_ztree li.tree_head + li > a{
+.tabular_ztree li.tabular_head a,
+.tabular_ztree li.tabular_head + li > a{
     border-top: none;
 }
 
-.table_ztree li.tree_head div.diy {        
+/*表头背景色*/
+.tabular_ztree li.tabular_head a{
+    background: #232323;
+}
+
+.tabular_ztree li.tabular_head div.tabular_col {        
     color: #fff;
     font-family: "Microsoft YaHei";
     font-size: 14px;
     text-align: center;
 }
 
-.table_ztree li ul {
+.tabular_ztree li ul {
     padding-left: 0px
 }
 
-.table_ztree div.diy span {
+.tabular_ztree div.tabular_col span {
     line-height: 30px;
     vertical-align: middle !important;
 }
 
-.table_ztree div.diy {
+/*单元格文本*/
+.tabular_ztree div.tabular_col {
     height: 100%;
     line-height: 30px;        
     text-align: center;
@@ -55,6 +58,6 @@
     overflow: hidden;
 } 
 
-.table_ztree div.diy:first-child {
+.tabular_ztree div.tabular_col:first-child {
     text-align: left;
 }
