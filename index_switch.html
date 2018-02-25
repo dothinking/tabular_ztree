@@ -55,6 +55,16 @@
         margin: 50px auto;
         margin-left: 300px;
     }
+    pre{
+        color: #33CC33;
+        font-weight: bold;
+        float: left;
+        width:250px;
+        min-height: 400px;
+        padding:10px;
+        margin:10px;
+        border:1px solid #ccc;
+    }
 </style>
 
 <body>
@@ -66,14 +76,50 @@
         </ul>
         <ul>
             <p>
-                <a href="https://github.com/dothinking/tabular_ztree">tabular zTree</a>是基于<a href="http://www.treejs.cn/v3/main.php#_zTreeInfo">zTree</a>的样式调整，使其呈现树形表格样式。
+                <a href="https://github.com/dothinking/tabular_ztree">tabular zTree</a>是基于<a href="http://www.treejs.cn/v3/main.php#_zTreeInfo">zTree</a>的样式调整，<br>使其呈现树形表格样式。
             </p>
         </ul>
     </div>
     <div class="layer">
         <div id="tree_div"><ul id="tree" class="ztree"></ul></div> 
         <div>
-            <li></li>
+            <pre>
+    var zSetting = {
+        view: {
+            showIcon: false,
+            showLine: false
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        }
+    };
+            </pre>
+            <pre>
+    var tSetting = {
+        cols:[{
+            key:"", 
+            name:"权限节点", 
+            width:0.55
+        },{
+            key:"view", 
+            name:"数据", 
+            width:0.15
+        },{
+            key:"document", 
+            name:"文档", 
+            width:0.15
+        },{
+            key:"model", 
+            name:"模型", 
+            width:0.15
+        }],
+        config:{
+            switch:false
+        }
+    };
+            </pre>
         </div>   
     </div>
 </body>
