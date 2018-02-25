@@ -60,9 +60,9 @@
 <body>
     <div class="sider">
         <ul>
-            <li class="current">基本样式</li>
+            <li><a href="index.html">基本样式</a></li>
             <li><a href="index_switch.html">不显示展开/折叠</a></li>
-            <li><a href="index_space.html">边距调整</a></li>
+            <li class="current">边距调整</li>
         </ul>
         <ul>
             <p>
@@ -85,12 +85,12 @@
         // ztree配置
         var zSetting = {
             view: {
-                showIcon: true,
+                showIcon: false,
                 showLine: false
             },
             check: {
                 enable: true,
-                chkStyle: "checkbox"
+                chkStyle: "radio"
             },
             data: {
                 simpleData: {enable: true}
@@ -115,7 +115,10 @@
                 key:"model", 
                 name:"模型", 
                 width:0.15
-            }]
+            }],
+            config:{
+                space: 50
+            }
         };
 
         // 数据源

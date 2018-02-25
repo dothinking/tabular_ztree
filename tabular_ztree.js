@@ -68,7 +68,7 @@ function treeHeader(cols)
 */
 function diyDom(treeId, treeNode, tSetting)
 {    
-    var spaceWidth = tSetting.config.space; // 左边距控制
+    var spaceWidth = tSetting.config.space || 20; // 左边距控制
 
     // zTree节点主要dom        
     var liObj = $("#" + treeNode.tId);
